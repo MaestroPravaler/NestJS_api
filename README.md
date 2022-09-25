@@ -47,7 +47,14 @@ O Objetivo deste curso é desenvolver uma API rest com buscas, validações e de
 8. Testando as rotas api.http (Cadastrar o mesmo usuário vai gerar um erro de validação).
 ## Serialização e tratamento de erros
 
-1. 
+1. Entendendo o conceito de serialização
+2. Utilizando o class-transformer
+3. Utilizando o @Exclude() para excluir propriedades da serialização
+4. Utilizando o @Expose() para incluir propriedades na serialização
+5. Utilizando o interceptor para tratar os dados da request e response. src/app.module.ts
+6. Tratamento de erros Criando um filtro genérico para tratar as exceptions src/common/filter/filtro-de-excecao-thhp.filter.ts
+7. Declarar o filtro criado no app.module.ts
+8. Modelos de maturidade de Leonard Richardson. (https://martinfowler.com/articles/richardsonMaturityModel.html)
 
 ## Aplicando os padrões REST
 

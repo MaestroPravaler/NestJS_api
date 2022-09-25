@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 ###
 # Busca um Usuario por nomeDeUsuario
-GET  http://localhost:3000/users/joao HTTP/1.1
+GET  http://localhost:3000/users/Usuario HTTP/1.1
 Content-Type: application/json
 ###
 # Gerando erro no campoo senha e nomecompleto
@@ -52,4 +52,21 @@ Content-Type: application/json
 #   ]
 # }
 ###
+# Cria um Usuario Utilizando Serialização e Interceptor
+# Mudando os dados para inglês e não retornando a senha
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "userName" : "Usuario",
+    "email" : "usuario@usuario.com",
+    "password" : "123456",
+    "fullName" : "Usuario de teste"
+}
+###
+# {
+#   "username": "Usuario",
+#   "email": "usuario@usuario.com",
+#   "fullname": "Usuario de teste"
+# }
 

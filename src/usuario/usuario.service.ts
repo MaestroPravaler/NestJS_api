@@ -1,30 +1,26 @@
-import { Injectable } from "@nestjs/common";
-import { Usuario } from "./usuario.entity";
+import { Injectable } from '@nestjs/common';
+import { Usuario } from './usuario.entity';
 
 @Injectable()
 export class UsuarioService {
-  isNomeDeUsuarioUnico(nomeDeUsuario: string): Promise<boolean> {
-      throw new Error("Method not implemented.");
-  }
-  private usuarios = [{
-    id: 1,
-    nomeDeUsuario: 'joao',
-    nomeCompleto: 'João da Silva',
-    email: 'jj@jj.com',
-    senha: '123456',
-    dataDeEntrada: new Date()
-  }
-  ];
-  
-  public cria(usuario: Usuario): Usuario {
-    this.usuarios.push(usuario);
+    private usuarios: Array<Usuario> = [{ 
+        id: 1,
+        nomeDeUsuario: 'gabriel',
+        email: 'gabriel.leite@alura.com.br',
+        senha: '123456',
+        nomeCompleto: 'Gabriel Leite',
+        dataDeEntrada: new Date()
+    }];
+    
+    public cria(usuario: Usuario): Usuario {
+        this.usuarios.push(usuario);
+        
+        return usuario;
+    }
 
-    return usuario;
-  }
+    public buscaPorNomeDeUsuario(nomeDeUsuario: string): Usuario {
+        const usuarioEncontrado = this.usuarios.find(usuario => usuario.nomeDeUsuario == nomeDeUsuario);
 
-  public buscaPorNomeDeUsuario(nomeDeUsuario: string): Usuario {
-    const usuarioEncontrado = this.usuarios.find(usuario => usuario.nomeDeUsuario == nomeDeUsuario);
-
-    return usuarioEncontrado;
-  }
+        return usuarioEncontrado;
+    }
 }
