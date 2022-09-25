@@ -3,6 +3,9 @@ import { Usuario } from "./usuario.entity";
 
 @Injectable()
 export class UsuarioService {
+  isNomeDeUsuarioUnico(nomeDeUsuario: string): Promise<boolean> {
+      throw new Error("Method not implemented.");
+  }
   private usuarios = [{
     id: 1,
     nomeDeUsuario: 'joao',
@@ -15,11 +18,13 @@ export class UsuarioService {
   
   public cria(usuario: Usuario): Usuario {
     this.usuarios.push(usuario);
-    
+
     return usuario;
   }
-  
+
   public buscaPorNomeDeUsuario(nomeDeUsuario: string): Usuario {
-    return this.usuarios.find(usuario => usuario.nomeDeUsuario === nomeDeUsuario);
+    const usuarioEncontrado = this.usuarios.find(usuario => usuario.nomeDeUsuario == nomeDeUsuario);
+
+    return usuarioEncontrado;
   }
 }

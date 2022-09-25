@@ -31,8 +31,20 @@ O Objetivo deste curso é desenvolver uma API rest com buscas, validações e de
 
 ## Validação de dados
 
-1. 
-
+1. Instalando as biliotecas de validação
+  ```
+  npm install class-transformer@0.2.3 class-validator@0.12.2 --save-exact
+  ```
+2. Utilização dos decoreators @IsNotEmpty() e @IsEmail() etc...
+3. Utilizando os pipes de validação - Configurando o main.ts
+4. Testando as rotas api.http (Erros de Validação)
+5. Criando validação personalizada src/usuario/is-nome-de-usuario-unico-validator.ts
+6. Utilizando !!! Para inverter o valor de false para true
+7. Passos para criar um validador personalizado com injeção de dependência:
+  - Colocar um @Injectable() na classe
+  - Declarar a classe de validação no usuario.module.ts
+  - No arquivo main.ts, utilizar o useContainer() para que o NestJS gerencie as injeções de dependência inclusive para o class-validator.
+8. Testando as rotas api.http (Cadastrar o mesmo usuário vai gerar um erro de validação).
 ## Serialização e tratamento de erros
 
 1. 
