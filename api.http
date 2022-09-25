@@ -10,9 +10,17 @@ Content-Type: application/json
 }
 ###
 # Busca um Usuario por nomeDeUsuario
-GET  http://localhost:3000/users/Usuario HTTP/1.1
+GET  http://localhost:3000/users/Usuari HTTP/1.1
 Content-Type: application/json
 ###
+# Falha na Busca um Usuario por nomeDeUsuario
+GET  http://localhost:3000/users/Usuari HTTP/1.1
+Content-Type: application/json
+###
+# {
+#   "statusCode": 404,
+#   "message": "Usuário com nome de usuário Usuari não encontrado"
+# }
 # Gerando erro no campoo senha e nomecompleto
 POST http://localhost:3000/users HTTP/1.1
 Content-Type: application/json

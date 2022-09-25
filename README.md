@@ -58,4 +58,12 @@ O Objetivo deste curso é desenvolver uma API rest com buscas, validações e de
 
 ## Aplicando os padrões REST
 
-1. 
+1. Colocando no header da resposta o Location da entidade criada
+2. Realizando uma modificação dentro do framework para receber a resposta, independente da utilizaçã do express ou fastify. src/core/http/nest-response.ts
+3. Implementando padrão de projeto builder para facilitar a criação de objetos complexos. src/core/http/nest-response-builder.ts
+4. Ensinando o NestJS a tratar a resposta NestResponse que criamos (interceptor)
+5. Polimorfismo (Esquema com o HttpAdapterHost)
+ ![](assets/images/http-adapter-host.png)
+6. Declarar o interceptor no app.module.ts
+7. Gerando o erro 404 quando não encontrar o usuário
+8. testando as rotas api.http
